@@ -1,17 +1,23 @@
 // WINDOW METHODS / OBJECTS / PROPERTIES
+let uno = 123;
+console.log(`${uno} - START`);
 
-// Alert
-//alert('Hello World');
+// Alert;
+// alert('Hello World');
 
-// Prompt
+// Prompt;
 // const input = prompt();
 // alert(input);
 
-// Confirm
-// if(confirm('Are you sure')){
-//   console.log('YES');
-// } else {
-//   console.log('NO');
+// const userName = prompt('Please enter your name: ');
+// alert(`Welcome ${userName}`);
+
+// Confirm;
+// if (confirm('Are you sure')) {
+// 	console.log('YES');
+// }
+// else {
+// 	console.log('NO');
 // }
 
 let val;
@@ -24,7 +30,7 @@ val = window.outerWidth;
 val = window.innerHeight;
 val = window.innerWidth;
 
-// Scroll points
+// Scroll points - for animating objects as the user scrolls down?
 val = window.scrollY;
 val = window.scrollX;
 
@@ -40,12 +46,12 @@ val = window.location.search;
 //Reload
 //window.location.reload();
 
-// History Object
+// History Object - Where the user visited before you
 
 // window.history.go(-2);
 // val = window.history.length;
 
-// Navigator Object
+// Navigator Object - Chrome, Firefox, Safari, Explorer, Edge, etc.
 val = window.navigator;
 val = window.navigator.appName;
 val = window.navigator.appVersion;
@@ -53,7 +59,5 @@ val = window.navigator.userAgent;
 val = window.navigator.platform;
 val = window.navigator.vendor;
 val = window.navigator.language;
-
-
 
 console.log(val);
