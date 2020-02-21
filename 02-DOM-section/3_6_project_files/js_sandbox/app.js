@@ -15,15 +15,15 @@ li.appendChild(document.createTextNode('Hello World'));
 
 // Create new link element
 const link = document.createElement('a');
-// Add classes
+// Add similar classes
 link.className = 'delete-item secondary-content';
-// Add icon html
+// Add icon html or TEXT element
 link.innerHTML = '<i class="fa fa-remove"></i>';
 
 // Append link into li
 li.appendChild(link);
 
-// Append li as child to ul
+// Append li as child to ul using correct selector
 document.querySelector('ul.collection').appendChild(li);
 
 console.log(li);
