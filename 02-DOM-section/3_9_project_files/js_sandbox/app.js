@@ -6,26 +6,30 @@ const heading = document.querySelector('h5');
 // clearBtn.addEventListener('click', runEvent);
 // Doubleclick
 // clearBtn.addEventListener('dblclick', runEvent);
-// Mousedown
+
+// Mousedown - you click and hold (down)
 // clearBtn.addEventListener('mousedown', runEvent);
-// Mouseup
+// Mouseup - you click and release (up)
 // clearBtn.addEventListener('mouseup', runEvent);
-// Mouseenter
+
+// Mouseenter - you enter the initial parent element (div containing button)
 // card.addEventListener('mouseenter', runEvent);
-// Mouseleave
+// Mouseleave - you leave the initial parent element (div containing button)
 // card.addEventListener('mouseleave', runEvent);
-// Mouseover
+
+// Mouseover - you enter the object
 // card.addEventListener('mouseover', runEvent);
-// Mouseout
+// Mouseout - you enter the object
 // card.addEventListener('mouseout', runEvent);
+
 // Mousemove
 card.addEventListener('mousemove', runEvent);
 
 // Event Handler
-function runEvent(e) {
-  console.log(`EVENT TYPE: ${e.type}`);
+function runEvent (e) {
+	console.log(`EVENT TYPE: ${e.type}`);
 
-  heading.textContent= `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+	heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
 
-  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+	document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
 }

@@ -17,17 +17,20 @@
 
 // console.log(name, age);
 
+// Create the event listener to the form
 document.querySelector('form').addEventListener('submit', function(e){
+  // Reading the value from task
   const task = document.getElementById('task').value;
-
-  let tasks;
-
+  // Initialize tasks 
+  let tasks;  
+  // If tasks is empty, create an empty array
   if(localStorage.getItem('tasks') === null) {
     tasks = [];
+    // Else parse the JSON object from string to array
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
-
+  
   tasks.push(task);
 
   localStorage.setItem('tasks', JSON.stringify(tasks));

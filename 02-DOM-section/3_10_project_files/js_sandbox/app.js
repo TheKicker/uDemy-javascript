@@ -27,15 +27,15 @@ taskInput.value = '';
 // Change
 select.addEventListener('change', runEvent);
 
-function runEvent(e){
-  console.log(`EVENT TYPE: ${e.type}`);
+function runEvent (e) {
+	console.log(`EVENT TYPE: ${e.type}`);
 
-  //console.log(e.target.value);
+	//console.log(e.target.value);
 
-  // heading.innerText = e.target.value;
+	// heading.innerText = e.target.value;
 
-  // Get input value
-  // console.log(taskInput.value);
+	// Get input value
+	// console.log(taskInput.value);
 
-  // e.preventDefault();
+	// e.preventDefault();
 }
