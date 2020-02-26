@@ -1,0 +1,22 @@
+body {
+	background: #424242;
+	color: white;
+}
+.container {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+button {
+	background: white;
+	width: 100%;
+	display: block;
+	float: center;
+}
+
+img {
+	height: 60vh;
+}
