@@ -49,6 +49,7 @@ function loadCustomers (e) {
 			let output = '';
 
 			customers.forEach(function (customer) {
+				// Plus equals so it appends and not replaces the data foreach
 				output += `
         <ul>
           <li>ID: ${customer.id}</li>
