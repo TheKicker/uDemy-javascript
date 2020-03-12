@@ -1,6 +1,6 @@
 let re;
 // Literal Characters
-re = /hello/;
+re = /hello/; // 
 re = /hello/i;
 
 // Metacharacter Symbols
