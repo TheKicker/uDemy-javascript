@@ -1,11 +1,11 @@
 // Create a symbol
-// const sym1 = Symbol();
-// const sym2 = Symbol('sym2');
+const sym1 = Symbol();
+const sym2 = Symbol('sym2');
 
-// console.log(typeof sym2);
+console.log(typeof sym2);
 
-// console.log(Symbol('123') === Symbol('123'));
-// console.log(`Hello ${sym1.toString()}`);
+console.log(Symbol('123') === Symbol('123'));
+console.log(`Hello ${sym1.toString()}`);
 
 // Unique Object Keys
 const KEY1 = Symbol();
@@ -27,5 +27,5 @@ myObj.key4 = 'Prop4';
 // }
 
 // Symbols are ignored by JSON.stringify
-console.log(JSON.stringify({key: 'prop'}));
-console.log(JSON.stringify({[Symbol('sym1')]: 'prop'}));
+console.log(JSON.stringify({ key: 'prop' }));
+console.log(JSON.stringify({ [Symbol('sym1')]: 'prop' }));
