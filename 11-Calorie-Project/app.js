@@ -12,11 +12,11 @@ const ItemCtrl = (function () {
 	// Data Structure / State
 	const data = {
 		items: [
-			// { id: 0, name: 'Steak Dinner', calories: 1200 },
-			// { id: 1, name: 'Cookie', calories: 400 },
-			// { id: 2, name: 'Eggs', calories: 300 },
-			// { id: 3, name: 'Buffalo Chicken Dip', calories: 450 },
-			// { id: 4, name: 'Cowboy Burger & Brew Fries', calories: 1450 }
+			{ id: 0, name: 'Steak Dinner', calories: 1200 },
+			{ id: 1, name: 'Cookie', calories: 400 },
+			{ id: 2, name: 'Eggs', calories: 300 },
+			{ id: 3, name: 'Buffalo Chicken Dip', calories: 450 },
+			{ id: 4, name: 'Cowboy Burger & Brew Fries', calories: 1450 }
 		],
 		currentItem: null,
 		totalCalories: 0
@@ -48,6 +48,17 @@ const ItemCtrl = (function () {
 
 			return newItem;
 		},
+		getTotalCalories: function () {
+			let total = 0;
+			// Loop through adding calories
+			data.items.forEach(function (item) {
+				total += item.calories;
+			});
+			// Set total calories to total
+			data.totalCalories = total;
+
+			return data.totalCalories;
+		},
 		getItems: function () {
 			return data.items;
 		}
@@ -60,7 +71,9 @@ const UserInterfaceCtrl = (function () {
 		itemList: '#item-list',
 		addBtn: '.add-btn',
 		inputMeal: '#item-name',
-		inputCalories: '#item-calories'
+		inputCalories: '#item-calories',
+		ouputCaloriesMain: '.calories-main',
+		outputCalories: '.total-calories'
 	};
 
 	// Public methods
@@ -94,6 +107,7 @@ const UserInterfaceCtrl = (function () {
 		addListItem: function (item) {
 			// Show the list
 			document.querySelector(UIselectors.itemList).style.display = 'block';
+			document.querySelector(UIselectors.ouputCaloriesMain).style.display = 'block';
 
 			// Create LI element
 			const li = document.createElement('li');
@@ -103,12 +117,16 @@ const UserInterfaceCtrl = (function () {
 			// Insert item
 			document.querySelector(UIselectors.itemList).insertAdjacentElement('beforeend', li);
 		},
+		showTotalCalories: function (totalCalories) {
+			document.querySelector(UIselectors.outputCalories).textContent = totalCalories;
+		},
 		clearInput: function () {
 			document.querySelector(UIselectors.inputMeal).value = '';
 			document.querySelector(UIselectors.inputCalories).value = '';
 		},
 		hideList: function () {
 			document.querySelector(UIselectors.itemList).style.display = 'none';
+			document.querySelector(UIselectors.ouputCaloriesMain).style.display = 'none';
 		},
 		getSelectors: function () {
 			return UIselectors;
@@ -170,6 +188,12 @@ const AppCTRL = (function (ItemCtrl, UserInterfaceCtrl) {
 				// Paint the items onto the UI
 				UserInterfaceCtrl.populateList(items);
 			}
+
+			// Get total calories
+			const totalCalories = ItemCtrl.getTotalCalories();
+
+			// Add total calories to UI
+			UserInterfaceCtrl.showTotalCalories(totalCalories);
 
 			// Load event listeners
 			loadEventListeners();
